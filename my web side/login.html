@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login form</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/extrnal.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg">
+    <center>
+ <div class="form">
+            
+                <h1>log in</h1>
+                <input type="email" placeholder="enter your email" id="usemail" class="form-control">
+                <br>
+                <input type="password" placeholder="enter your password" id="uspass" class="form-control">
+           <br>
+            <div class="checkbox"><input type="checkbox">Remember me</div>
+                <button type="submit" class="btn btn-success btn-block" onclick="signin()">log in</button><br>
+               <a href="create.html"> <button type="create" class="btn btn-success btn-block">create account</button>
+</a>            </div></center>
+<script>
+
+    function signin()
+    {
+        var useremail = document.getElementById("usemail").value
+var userpassword = document.getElementById("uspass").value
+
+var checkEmail = localStorage.getItem("Email")
+var checkpass = localStorage.getItem("Password")
+
+if(useremail == checkEmail && userpassword == checkpass)
+{
+alert("Login")
+window.location = "home.html"
+}
+else
+{
+alert("Incorrect Email and Password ")
+}
+    }
+</script>
+</body>
+</html>

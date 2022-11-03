@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sign in</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/extrnal.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg">
+   <div class="cre">
+        <h1>creative account</h1>
+        <label>FIRST NAME</label>
+        <input type="text" class="form-control" placeholder="Enter first name" id="usfname">
+        <label>LAST NAME</label>
+        <input type="text" class="form-control" placeholder="Enter last name" id="uslname"> 
+        <label>ENTER YOUR EMAIL</label>
+        <input type="email" class="form-control" placeholder="Enter your e-mail" id="usemail">
+        <label>ENTER UR PASSWORD</label>
+        <input type="password" class=form-control placeholder="Password" id="uspass">
+        <label> CONFORM PASSWORD</label>
+        <input type="password" class=form-control placeholder="conform password" id="uscpass">
+        <label>GENDER</label>
+        <div>
+        <label for="male" class="radio-inline"><input type="radio" name="gender" id="male">male</label>
+        <label for="female" class="radio-inline"><input type="radio" name="gender" id="female">female</label>
+        </div>
+        <button type="submit" class="btn btn-success btn-block" onclick="signup()">submit</button><br>
+   </div>
+    
+<script>
+    function signup()
+    {    
+var firstname = document.getElementById("usfname").value
+var lastname = document.getElementById("uslname").value
+var useremail = document.getElementById("usemail").value
+var userpassword = document.getElementById("uspass").value
+var compassword = document.getElementById("uscpass").value
+var male = document.getElementById("male").value
+var female = document.getElementById("female").value
+if(firstname == "" || lastname == ""|| useremail == "" || userpassword == ""||compassword)
+{
+  alert("Plz filled this box")   
+}
+else
+{
+   localStorage.setItem("first", firstname)
+   localStorage.setItem("last", lastname)
+   localStorage.setItem("Email",useremail)
+   localStorage.setItem("Password", userpassword)
+   localStorage.setItem("comform",compassword)
+    alert("Register successfully")
+    window.location = "login.html"
+}
+    }
+</script>
+</body>
+</html>
